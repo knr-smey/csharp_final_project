@@ -1,23 +1,15 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Sidebar from './components/Sidebar.vue';
 </script>
 
 <template>
- 
-  <HelloWorld msg="Vite + Vue" />
-</template>
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <Sidebar />
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+    <!-- Main content -->
+    <main class="flex-1 bg-gray-100 p-6">
+      <router-view />
+    </main>
+  </div>
+</template>
