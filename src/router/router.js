@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router"
 
 // Import your page components
-import Courses from "../pages/Courses.vue"
-import Categories from "../pages/Categories.vue"
-import SubCategories from "../pages/SubCategories.vue"
+import Courses from "../pages/admin/Courses.vue"
+import Categories from "../pages/admin/Categories.vue"
+import SubCategories from "../pages/admin/SubCategories.vue"
 
 const routes = [
   { path: "/courses", component: Courses },
