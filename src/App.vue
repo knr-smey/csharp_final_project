@@ -1,23 +1,30 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Sidebar from './components/Sidebar.vue';
 </script>
 
 <template>
- 
-  <HelloWorld msg="Vite + Vue" />
+  <div class="flex h-screen overflow-hidden">
+    <!-- Sidebar - Fixed height -->
+    <Sidebar />
+
+    <!-- Main content - Scrollable -->
+    <main class="flex-1 bg-gray-100 overflow-y-auto scrollbar-hidden">
+      <div class="p-6">
+        <router-view />
+      </div>
+    </main>
+  </div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<style>
+.scrollbar-hidden::-webkit-scrollbar{
+  display:none;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.scrollbar-hidden{
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+* {
+  scroll-behavior: smooth;
 }
 </style>
